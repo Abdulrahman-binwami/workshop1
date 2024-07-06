@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>workshop1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .search {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .search input[type="text"] {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .search button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        .search button:hover {
+            background-color: #0056b3;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-top: none;
+            z-index: 10;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .suggestions li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .suggestions li:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="..." oninput="showSuggestions()">
+    <div id="suggestions"></div>
+    <button onclick="search()">Search</button>
+
+    <div id="content">
+       <h2>Resume Sample 1 - Entry Level Web Designer</h2>
+        <h3>Mark L. Fernando</h3>
+        29 A Mapang-Akit St., Pinyahan, Quezon City<br>
+        +63 946 XXX XXXX | markfernando93@live.com<br>
+        <h4>Career Objective</h4>
+        <p>Secure a position in a creative and dynamic work environment where I can apply my skills in graphic arts and web design.</p>
+
+        <h4>Technical Skills</h4>
+        <ul>
+            <li>Web and graphic design</li>
+            <li>Adobe Creative Suite (Photoshop, Illustrator, InDesign, Dreamweaver and Flash)</li>
+            <li>HTML, CSS, XML</li>
+            <li>MS Windows / Mac OS X / Linux</li>
+            <li>Microsoft Office Suite</li>
+        </ul>
+
+        <h4>Other Skills</h4>
+        <ul>
+            <li>Excellent time management skills</li>
+            <li>Strong interpersonal and communication skills</li>
+            <li>Analytical with excellent creative problem-solving skills</li>
+            <li>Extremely organized and detail-oriented</li>
+        </ul>
+
+        <h4>Education</h4>
+        <b>BS in Information Technology</b><br>
+        Informatics International College<br>
+        June 2010 - March 2014<br>
+
+        <h4>Pre-Professional Experience</h4>
+        <b>Graphic Design Intern</b><br>
+        Infinite Technology Solutions<br>
+        March 2013 - May 2013<br>
+        Designed marketing materials (print and digital) for the company and assisted with other projects involving web design.<br>
+
+        <h4>Awards Received</h4>
+        <b>Best Design Project - Product Design Category</b><br>
+        4th Information Technology Festival<br>
+        Informatics International College<br>
+
+        <h4>References</h4>
+        Available upon request.<br>
+
+        <h2>Resume Sample 2 - Entry Level Web Developer</h2>
+        <h3>Jennifer S. Oribe</h3>
+        300 Westbank Road, Maybunga, Pasig City<br>
+        +63 925 XXX XXXX | oribe.jennifer@ymail.com<br>
+
+        <h4>Career Objective</h4>
+        <p>As a recent graduate, I am eager to build a long-term career in the field of web development.</p>
+
+        <h4>Technical Skills</h4>
+        <ul>
+            <li>Web development and web design</li>
+            <li>Web and mobile app development</li>
+            <li>Programming and front-end coding</li>
+            <li>Graphic design and video editing</li>
+        </ul>
+        <b>Operating Systems:</b> Windows, Mac OS X, Android, and Linux<br>
+        <b>Languages:</b> C, C++, C#, HTML, XML, CSS, JavaScript, PHP, Java, and Ruby<br>
+        <b>Applications:</b> MS Office, Photoshop, Illustrator, Dreamweaver, After Effects<br>
+        <b>Others:</b> WordPress, Joomla, Drupal, and WooCommerce<br>
+
+        <h4>Personal Skills</h4>
+        <ul>
+            <li>Excellent English skills</li>
+            <li>High level of maturity and sense of responsibility</li>
+            <li>Sound time management skills</li>
+            <li>Highly resourceful, objective, and reliable</li>
+            <li>Ability to work in a team-driven environment</li>
+        </ul>
+
+        <h4>Education</h4>
+        <b>BS in Information Technology (Major in Web Development)</b><br>
+        iAcademy<br>
+        (June 2011 - March 2015)<br>
+        <b>Relevant Courses:</b> Advanced Programming, Object-Oriented Programming, Web Design Standards and Workflow, Applications Development, Web Analytics, and Web Animation and Interactivity<br>
+
+        <h4>Pre-Professional Experience</h4>
+        <b>Web Design Intern</b><br>
+        Interlace Web Solutions<br>
+        (October 2014 - December 2014)<br>
+        Worked with a wide range of projects including manuals, posters, tradeshow materials, and web graphics. Assisted with the design of various projects and provided help with other miscellaneous tasks.<br>
+
+        <b>Web Development Intern</b><br>
+        Emerson Electric Asia Ltd.<br>
+        (June 2014 - August 2014)<br>
+        Worked closely with web developers and assisted them in group web development projects. Resolved minor bug fixes and created documentation for existing development projects.<br>
+
+        <h4>Trainings Attended</h4>
+        <b>&lt;Form&gt; Function() &amp; .Class Web Design Conference 2014</b><br>
+        De La Salle University - Manila<br>
+        November 8, 2014<br>
+        <b>12th Youth Congress on Information Technology</b><br>
+        SMX Convention Center, Pasay City<br>
+        March 4, 2014<br>
+
+        <h4>References</h4>
+        Will be provided upon request.<br>
+
+        <h2>Resume Sample 3 - Entry Level IT Specialist</h2>
+        <h3>Daniel Leopold S. Veron</h3>
+        88 Enriquez St., Lucena City, Quezon, Philippines<br>
+        +63 919 XXX XXXX | dlveron@gmail.com<br>
+
+        <h4>Career Objective</h4>
+        <p>Seeking an entry-level position in the field of information technology (IT) with a focus on hardware and network troubleshooting and IT equipment maintenance and monitoring.</p>
+
+        <h4>Technical Skills</h4>
+        <ul>
+            <li>Network troubleshooting</li>
+            <li>Hardware troubleshooting, repair, and maintenance</li>
+            <li>Systems analysis</li>
+            <li>Database design and implementation</li>
+            <li>Application programming</li>
+        </ul>
+
+        <b>Operating Systems:</b> Windows and Linux<br>
+        <b>Programming:</b> C++, C#, VB, HTML, JavaScript, CSS, PHP<br>
+        <b>Applications:</b> MS Office, Visual Studio, Photoshop, Dreamweaver, NetBeans, Blender, and Macromedia Flash<br>
+        <b>Database Systems:</b> MySQL<br>
+
+        <h4>Personal Skills</h4>
+        <ul>
+            <li>Good verbal and written communication skills</li>
+            <li>Motivated and always willing to learn new things</li>
+            <li>Independent and self-sufficient in handling tasks</li>
+            <li>Collaborative and able to work in teams or groups</li>
+        </ul>
+
+        <h4>Education</h4>
+        <b>Bachelor of Science in Information Technology</b><br>
+        Manuel S. Enverga University<br>
+        Lucena City, Quezon<br>
+        2011 - 2015<br>
+
+        <h4>Pre-Professional Experience</h4>
+        <b>IT Intern</b><br>
+        IT Support and Maintenance Team<br>
+        Tech One Global Phils., Inc.<br>
+        June 2014 - October 2014<br>
+        Handled network and hardware troubleshooting in an enterprise environment. Tracked and documented IT equipment issues to facilitate timely resolution.<br>
+
+        <b>Student Assistant</b><br>
+        College of Computer Studies<br>
+        Manuel S. Enverga University<br>
+        April 2012 - June 2014<br>
+        Handled troubleshooting and maintenance of IT equipment. Provided support in monitoring and deployment of IT equipment to students and faculty.<br>
+
+        <h4>Trainings Attended</h4>
+        <b>Y4IT: 12th Youth Congress on Information Technology</b><br>
+        SMX Convention Center, Pasay City<br>
+        September 11, 2014<br>
+
+        <b>SAP Business One Training Course (TB1000 Logistics)</b><br>
+        Manuel S. Enverga University<br>
+        October 7, 2014<br>
+
+        <h4>Organizations</h4>
+        <b>Vice-President</b><br>
+        Youth Environmentalist Society<br>
+        June 2014 - March 2015<br>
+
+        <b>Member</b><br>
+        Junior Philippine Computer Society<br>
+        October 2011 - March 2015<br>
+
+        <h4>Honors and Awards</h4>
+        <b>Top 12 Outstanding Student Leader</b><br>
+        Search for Outstanding Student Leader of Lucena City<br>
+        February 18, 2015<br>
+        <b>Champion</b><br>
+        Annual Information Technology (IT) Quiz Bee<br>
+        August 6, 2014<br>
+    </div>
+
+    <script>
+        function search() {
+
+            const highlightedElements = document.querySelectorAll('.highlight');
+            highlightedElements.forEach(el => {
+                el.classList.remove('highlight');
+            });
+
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            const contentDiv = document.getElementById('content');
+
+            const content = contentDiv.innerHTML.toLowerCase();
+
+          
+            if (searchTerm.trim() === "") {
+                alert("Please enter a search term."); 
+                return; 
+            }
+
+            const regex = new RegExp(searchTerm, 'gi');
+
+            let matches = content.match(regex);
+
+            if (matches) {
+                contentDiv.innerHTML = contentDiv.innerHTML.replace(regex, match => `<span class="highlight">${match}</span>`);
+            } else {
+                alert("No matches found."); 
+            }
+        }
+
+        function showSuggestions() {
+
+            const searchInput = document.getElementById('searchInput');
+
+            const suggestionsDiv = document.getElementById('suggestions');
+
+            const searchTerm = searchInput.value.toLowerCase();
+
+            const contentDiv = document.getElementById('content');
+
+            const content = contentDiv.innerText.toLowerCase();
+
+    if (searchTerm.trim() === "") {
+        suggestionsDiv.innerHTML = ""; 
+        return; 
+        }
+
+    const words = content.split(/[\s,]+/);
+
+    const filteredWords = words.filter(word => word.startsWith(searchTerm));
+
+
+    suggestionsDiv.innerHTML = "";
+
+    filteredWords.forEach(word => {
+        const suggestionElement = document.createElement('div');
+
+        suggestionElement.textContent = word;
+
+        suggestionElement.onclick = () => {
+
+            searchInput.value = word;
+
+            suggestionsDiv.innerHTML = "";
+
+            search();
+        };
+
+        suggestionsDiv.appendChild(suggestionElement);
+    });
+}
+
+    </script>
+</body>
+</html>
